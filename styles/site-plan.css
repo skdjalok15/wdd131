@@ -10,7 +10,7 @@ body {
   font-family: 'Roboto', sans-serif;
   background-color: #FEFAE0; /* Light background */
   color: #283618; /* Dark text */
-  line-height: 1.6;
+  line-height: 1.8; /* Improved readability */
 }
 
 /* Headings */
@@ -56,6 +56,7 @@ hr {
 /* Main Content */
 main {
   padding: 20px;
+  margin: 0 10px; /* Prevent edge touching */
 }
 
 /* Paragraphs */
@@ -68,10 +69,12 @@ p {
 a {
   color: #BC6C25;
   text-decoration: none;
+  transition: color 0.3s ease; /* Smooth color transition */
 }
 
 a:hover {
   text-decoration: underline;
+  color: #606C38;
 }
 
 /* Navigation */
@@ -165,4 +168,30 @@ footer a:hover {
 
 .shadow {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Mobile Responsiveness */
+@media screen and (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .sitemap {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .sitemap div {
+    width: 80%;
+    margin-bottom: 10px;
+  }
+
+  main {
+    padding: 15px;
+  }
+
+  img {
+    max-width: 100%;
+  }
 }
