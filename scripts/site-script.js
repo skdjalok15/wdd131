@@ -1,4 +1,4 @@
-// products.js (JavaScript module)
+// site-script.js (JavaScript module)
 
 const products = [
   {
