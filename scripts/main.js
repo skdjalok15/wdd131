@@ -1,55 +1,72 @@
-// Object to hold environmental information
-const sustainabilityInfo = {
-    message: "Make sustainable choices for a greener planet!",
-    ecoTips: [
-        "Use less plastic",
-        "Recycle and compost",
-        "Use energy-efficient appliances",
-        "Choose eco-friendly products"
-    ],
-    ecoProducts: [
-        { name: "Solar Panel", description: "A clean energy solution" },
-        { name: "Reusable Water Bottles", description: "Minimize plastic waste" },
-        { name: "Electric Cars", description: "Reduce carbon emissions" }
-    ]
-};
+// Modal Toggle Functionality
+const toggleModalButton = document.getElementById("toggleModal");
+const modal = document.getElementById("modal");
 
-// Function to display eco-tips dynamically
-function displayEcoTips() {
-    const tipContainer = document.getElementById("eco-tips");
-    sustainabilityInfo.ecoTips.forEach(tip => {
-        const li = document.createElement("li");
-        li.textContent = tip;
-        tipContainer.appendChild(li);
-    });
-}
-
-// Function to display eco-friendly products dynamically
-function displayEcoProducts() {
-    const productContainer = document.getElementById("eco-products");
-    sustainabilityInfo.ecoProducts.forEach(product => {
-        const div = document.createElement("div");
-        div.classList.add("product");
-        const h3 = document.createElement("h3");
-        h3.textContent = product.name;
-        const p = document.createElement("p");
-        p.textContent = product.description;
-        div.appendChild(h3);
-        div.appendChild(p);
-        productContainer.appendChild(div);
-    });
-}
-
-// Event listener for hero section interaction
-document.getElementById("hero-msg").addEventListener("click", function() {
-    alert("Welcome to the Sustainability Hub! Start making a difference today.");
+toggleModalButton?.addEventListener("click", function () {
+    if (modal.style.display === "none" || modal.style.display === "") {
+        modal.style.display = "block";
+        modal.style.transition = "opacity 1s";
+        modal.style.opacity = 1;
+    } else {
+        modal.style.display = "none";
+    }
 });
 
-// Initialize the content dynamically
-function initializePage() {
-    displayEcoTips();
-    displayEcoProducts();
-}
+// Theme Toggle Functionality (Light/Dark Mode)
+const themeToggleButton = document.getElementById("themeToggle");
+themeToggleButton?.addEventListener("click", function () {
+    document.body.classList.toggle("dark-theme");
+});
 
-// Calling the initialize function when the page loads
-window.onload = initializePage;
+// Smooth Scroll for Anchor Links
+const scrollLinks = document.querySelectorAll('a[href^="#"]');
+scrollLinks.forEach(function (link) {
+    link.addEventListener("click", function (event) {
+        event.preventDefault();
+        const target = document.querySelector(this.getAttribute("href"));
+        window.scrollTo({
+            top: target.offsetTop,
+            behavior: "smooth"
+        });
+    });
+});
+
+// Real-time Username Validation for a Booking Form
+const usernameInput = document.getElementById("username");
+const usernameError = document.getElementById("usernameError");
+
+usernameInput?.addEventListener("input", function () {
+    if (usernameInput.value.length < 3) {
+        usernameError.textContent = "Username must be at least 3 characters long.";
+        usernameInput.style.borderColor = "red";
+    } else {
+        usernameError.textContent = "";
+        usernameInput.style.borderColor = "green";
+    }
+});
+
+// Handle Form Submission with Basic Validation
+const form = document.getElementById("contactForm");
+form?.addEventListener("submit", function (event) {
+    event.preventDefault(); // Prevent form submission for demo purposes
+    const name = usernameInput.value;
+    if (name.length < 3) {
+        alert("Please enter a valid username.");
+    } else {
+        alert(`Form submitted successfully, welcome ${name}!`);
+    }
+});
+
+// Expand/Collapse Section (for more interaction)
+const expandButton = document.getElementById("expandBtn");
+const expandSection = document.getElementById("expandSection");
+
+expandButton?.addEventListener("click", function () {
+    if (expandSection.style.display === "none" || expandSection.style.display === "") {
+        expandSection.style.display = "block";
+        expandButton.textContent = "Collapse Section";
+    } else {
+        expandSection.style.display = "none";
+        expandButton.textContent = "Expand Section";
+    }
+});
