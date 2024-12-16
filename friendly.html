@@ -1,84 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
-<head> 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles/subpage2.css">
-    <title>Environmental Sustainability Hub</title>
-    <base target="_blank">
-    
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Products - Friendly Products</title>
+  <link rel="stylesheet" href="styles/friendly.css">
 </head>
-<body class="subpage"></body>
-<body><center>
-    <header>
- <a id="logo1" href="index.html">
-            <img src="images/logo.png" alt="Logo.png">
-        </a>
-        <nav>
-            <a href="https://skdjalok15.github.io/wdd131/index.html">Home</a>
-            <a href="https://skdjalok15.github.io/wdd131/Tips.html">Page 1</a>
-                <a href="https://skdjalok15.github.io/wdd131/site-plan.html">Site Plan</a>
-                <a href="https://sunandat.github.io/week-12-web-component-main/">About Us</a>
-        </nav>
+<body>
+  <!-- Header -->
+  <header>
+    <nav>
+      <div class="logo">
+        <img src="images/logo.png" alt="Friendly Products Logo" loading="lazy">
+      </div>
+      <ul>
+        <li><a href="https://shakeenkumar.github.io/project/tips">Tips</a></li>
+        <li><a href="https://shakeenkumar.github.io/project/index.html">Home</a></li>
+        <li><a href="https://shakeenkumar.github.io/week-12-web-component/">About Us</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    </header>
-    <div id="hero">
-        <div id="hero-box">
-            <img id="hero-img" src="images/friendly-products.jpg" alt="People enjoying white water rafting">
-        </div>
-        <section id="hero-msg">
-            <h1 class="home-title">Sustainable Living Friendly Products</h1>
-            <h4>Towards a Sustainable Tomorrow </h4>
-            <div class='button-box'>
-                <a class='book' href="https://shakeenkumar.github.io/wrr/contactus.html">Book Now</a>
-            </div>
-        </section>
+  <!-- Products Section -->
+  <main>
+    <section class="products">
+      <h2>Our Products</h2>
+      <div class="product-grid" id="product-grid">
+        <!-- Dynamic Products will be inserted here -->
+      </div>
+    </section>
+
+    <!-- Feedback Form -->
+    <section class="feedback">
+      <h2>We Value Your Feedback</h2>
+      <form id="feedback-form">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" placeholder="Enter your name" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+        <label for="message">Feedback:</label>
+        <textarea id="message" name="message" placeholder="Share your thoughts" rows="4" required></textarea>
+
+        <button type="submit">Submit Feedback</button>
+      </form>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2024 Environmental Sustainability Hub</p>
+    <p>Site Plan: <a href="https://shakeenkumar.github.io/project/site-plan.html">Site Plan</a></p>
+    <div class="social">
+      <a href="https://facebook.com">
+        <img src="images/facebook.png" alt="Facebook icon">
+      </a>
+      <a href="https://twitter.com">
+        <img src="images/twitter.png" alt="Twitter icon">
+      </a>
+      <a href="https://instagram.com">
+        <img src="images/instagram.png" alt="Instagram icon">
+      </a>
     </div>
-    <main class="home-grid">
-        <section class="tip1-card">
-            <img class="card-img" src="images/eco products2.jpg" alt="sustainabil tip1">
-            <h2>products 1</h2>
-        </section>
-        <section class="Tip2-card">
-            <img class="card-img" src="images/eco products3.jpg" alt="sustainabil tip">
-            <h2>products 2 </h2>
-        </section>
-        <section class="Final-card"></section>
-        <img class="Final" src="images/eco products1.jpg" alt="Final">
-        <section class="msg">
-        
-            <p> Eco-friendly products often prioritize the use of renewable resources, reduce energy consumption, and minimize waste generation. From biodegradable packaging materials to energy-efficient appliances, these items contribute to the overall well-being of our planet by lessening pollution, conserving natural resources, and supporting a circular economy. By choosing eco-friendly products, consumers not only make a positive impact on the environment but also contribute to a global shift towards more responsible and mindful consumption. Embracing these products is a tangible way for individuals and businesses alike to participate in the collective effort to create a healthier, greener world for future generations.
+  </footer>
 
-
-
-
-
-            </p>
-        
-        </section>
-    </main>
-    <footer>
-        <p>Environment sustainable Hub 2023</p>
-        <p>Site Plan: <a href="https://skdjalok15.github.io/wdd131/site-plan.html">Site Plan</a></p>
-        <div class="social">
-            <a href="https://facebook.com">
-                <img src="images/facebook.png" alt="fb icon">
-            </a>
-            <a href="https://twitter.com">
-                <img src="images/twitter.png" alt="twitter icon">
-            </a>
-            <a href="https://instagram.com">
-                <img src="images/instagram.png" alt="instagram icon">
-            </a>
-        </div>
-    </header>
-    <div id="content">
-        <div id="background">
-            <!-- Content for the #background element goes here -->
-        </div>
-        <div class="msg">
-            <!-- Content for the .msg element goes here -->
-        </div>
-    </div>
-    </center>
-    </footer>
+  <script src="scripts/friendly.js"></script>
+</body>
+</html>
